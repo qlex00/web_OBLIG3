@@ -131,7 +131,6 @@ main section img {
     list-style: decimal;
 }
 
-
 #produktlink, a:visited{ /*gjør synlig hvilken linker en kan klikke på, kan endres*/
     display: block;
     color:lightblue; 
@@ -166,6 +165,12 @@ footer {
         list-style: none;
         margin: 0;
     }
+
+    .grid-container {
+        display: flex;
+        align-items: right;
+    }
+
 
     .flex-section {
         display: flex;
