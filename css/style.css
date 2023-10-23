@@ -8,10 +8,9 @@ html {
 
 body {
     background-color: gray; 
+    margin: 0;
 }
-
 /*selv om prototypen hadde hvitt bakgrunnsfarge har jeg bestemt meg for å bruke grå basert på tilbakemeldinger jeg fikk i bruker testing*/
-
 
 header nav {
     margin: 1rem 0 0 0; 
@@ -21,21 +20,28 @@ header nav {
 h1 {
     font-family: 'Birthstone Bounce';
 }
+
 h1, a{
     text-align: center;
     text-decoration: none;
     color: #000;
 }
 
+h2 {
+    text-align: center;
+}
+
 nav a {
     text-decoration: none;
     color: #000; 
-    /*padding: 1rem; /* Legger til padding (avstand) rundt lenkene. */
+    padding: 1rem;
     display: inline-block; /*lenkene til blokk-elementer*/
 }
 
 
 ul{
+    margin: 1rem 0 0 0;
+    padding: 0;
     list-style: none;
     text-align: center;
     margin: 0;
@@ -43,6 +49,8 @@ ul{
 }
 
 ul li {
+    margin: 1rem 0 0 0;
+    padding: 0;
     list-style: disc;
 }
 
@@ -51,15 +59,58 @@ ul li {
 }*/
 
 
-/*#grid-container {
+#grid-container {
     display: grid;
     grid-template-areas: "header" "main" "footer";
+}
+
+header, main, footer {
+    padding: 1rem;
+}
+
+header {
+    font-size: 1.5rem;
+    font-weight: 600;
+    grid-area: header;
 }
 
 header nav {
     display: flex;
     justify-content: space-between;
     position: relative;
+}
+
+/*.navbar {
+    display: none;
+}*/
+
+.responsive {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-color: #242424;
+    margin: 0;
+    padding: 0;
+    top: 40px;
+    width: 100%;
+    list-style: none;
+}
+
+.responsive a {
+    color: #fff;
+    display: inline-block;
+    padding: 1rem;
+    text-decoration: none;
+}
+
+/*.button {
+    display: inline-block;
+    padding: 1rem;
+    text-decoration: none;
+    background-color: #171717;
+    color: #fff;
+    border-radius: 5px;
+    font-weight: 400;
 }*/
 
 article {
@@ -70,8 +121,22 @@ article {
 
 }
 
-main section article img {
+main {
+    grid-area: main;
+}
+
+main section img {
     width: 100%;
+}
+
+/*#placeholders div, img {
+    height: 200px;
+    width:100%;
+}*/
+
+.punktliste {
+    text-align: left;
+    display: inline-block;
 }
 
 #produktlink, a:visited{ /*gjør synlig hvilken linker en kan klikke på, kan endres*/
@@ -79,15 +144,20 @@ main section article img {
     color:lightblue; 
 }
 
-footer {
-    padding: 50;
-    margin: 100;
-    text-align: center;
-    /*word-spacing: 500px;*/
+p{
+    text-align: justify;
 }
 
-span {
-    margin: 500px;
+footer {
+    grid-area: footer;
+}
+
+
+footer {
+    padding: 50;
+    margin: 200;
+    text-align: center;
+    word-spacing: 500px;
 }
 
 @media only screen and (min-width: 600px) {
@@ -96,8 +166,28 @@ span {
         grid-template-areas: "header header header" "main main main" "footer footer footer";
     }
 
-    header nav {
-        float: none; /* Elementene flyter til venstre. */
+    .navbar {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        list-style: none;
+        margin: 0;
+    }
+
+    .flex-section {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .flex-section img {
+        width: 50%;
+    }
+
+    .flex-section section {
+        padding: 1rem;
+        width: 40%;
+        align-self: center;
     }
 
     header nav ul {
@@ -123,5 +213,14 @@ span {
     main article {
         float: left; 
         margin: 10px;
+    }
+
+    main section ol {
+        float: none;
+        margin: 0;
+    }
+
+    main section article ol li {
+        display: inline-block;
     }
 }
