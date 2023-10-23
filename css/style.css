@@ -1,85 +1,127 @@
+* {
+    box-sizing: border-box;
+}
+
 html {
     font-size: calc(1em + 1vw);
 }
 
+body {
+    background-color: gray; 
+}
+
+/*selv om prototypen hadde hvitt bakgrunnsfarge har jeg bestemt meg for å bruke grå basert på tilbakemeldinger jeg fikk i bruker testing*/
+
+
+header nav {
+    margin: 1rem 0 0 0; 
+    padding: 0; /
+}
+
 h1 {
-    text-align: center;
+    font-family: 'Birthstone Bounce';
 }
-
-header{
-    text-decoration:dashed;
-}
-
-header nav ul {
-    margin: 1rem 0 0 0; /* Legger til margen (margin) til toppen av navigasjonsmenyen. */
-    padding: 0; /* Nullstiller padding (avstand) for å fjerne overflødig plass. */
+h1, a{
     text-align: center;
+    text-decoration: none;
+    color: #000;
 }
 
 nav a {
-    text-decoration: none; /* Fjerner understrekingen under lenkene. */
+    text-decoration: none;
     color: #000; 
-    padding: 1rem; /* Legger til padding (avstand) rundt lenkene. */
-    display: inline-block; /* Gjør lenkene til blokk-elementer som er side om side. */
+    /*padding: 1rem; /* Legger til padding (avstand) rundt lenkene. */
+    display: inline-block; /*lenkene til blokk-elementer*/
 }
 
-body {
-    background-color: gray; /*selv om prototypen hadde hvitt bakgrunnsfarge har jeg bestemt meg for*/
+
+ul{
+    list-style: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
 }
+
+ul li {
+    list-style: disc;
+}
+
+/*main, section, article, ol, li {
+    list-style-type: disc ;
+}*/
+
+
+/*#grid-container {
+    display: grid;
+    grid-template-areas: "header" "main" "footer";
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}*/
 
 article {
-    max-width: 400px; /* Setter maksimal bredde for artiklene til 400 piksler. */
-    min-width: 250px; /* Setter minimal bredde for artiklene til 250 piksler. */
-    width: 100%; /* Gjør artiklene 100% brede for responsivt design. */
-    margin: 1rem auto; /* Senterjusterer artiklene horisontalt ved å bruke margin: auto. */
-    background-color: #fff;
+    max-width: 400px; 
+    min-width: 250px;
+    width: 100%; /*responsivt design. */
+    margin: 1rem auto; 
+
 }
 
-/* Styling for bilder i artiklene */
 main section article img {
-    width: 100%; /* Gjør bildene 100% brede for å tilpasse seg foreldrelementet. */
+    width: 100%;
+}
+
+#produktlink, a:visited{ /*gjør synlig hvilken linker en kan klikke på, kan endres*/
+    display: block;
+    color:lightblue; 
 }
 
 footer {
-    /*padding: 0;
-    margin: 0;*/
+    padding: 50;
+    margin: 100;
     text-align: center;
-    text-decoration: overline;
+    /*word-spacing: 500px;*/
+}
+
+span {
+    margin: 500px;
 }
 
 @media only screen and (min-width: 600px) {
 
-    /* Styling for elementer innenfor <span> -elementer i headeren. */
-    header nav span {
-        float: left; /* Elementene flyter til venstre. */
+    #grid-container {
+        grid-template-areas: "header header header" "main main main" "footer footer footer";
     }
 
-    /* Styling for <ul> -elementer innenfor headeren. */
-    header nav ul {
-        float: right; /* Elementene flyter til høyre. */
-        margin: 0; /* Nuller ut marginen for <ul> -elementene. */
-    }
-
-    /* Styling for <li> -elementer innenfor <ul> -elementene i headeren. */
-    header nav ul li {
-        display: inline-block; /* Elementene vises som blokker ved siden av hverandre. */
-    }
-
-    /* Styling for <nav> -elementet innenfor headeren. */
     header nav {
-        overflow: hidden; /* Hindrer at elementene "lekker" ut av <nav> -elementet. */
+        float: none; /* Elementene flyter til venstre. */
     }
 
-    /* Styling for <section> -elementet innenfor <main>. */
+    header nav ul {
+        float: none; /* Elementene flyter til høyre. */
+        margin: 0; 
+    }
+
+    header nav ul li {
+        display: inline-block; 
+    }
+
+    header nav {
+        overflow: hidden;
+    }
+
     main section {
-        overflow: hidden; /* Hindrer at elementene "lekker" ut av <section> -elementet. */
-        max-width: 1260px; /* Setter maksimal bredde for <section> -elementet. */
-        width: 100%; /* Fyller hele bredden av foreldreelementet. */
-        margin: 0 auto; /* Sentrerer elementet horisontalt. */
+        overflow: hidden; 
+        max-width: 1260px; 
+        width: 100%;
+        margin: 0 auto;
     }
     
-    /* Styling for <article> -elementer innenfor <main>. */
     main article {
-        float: left; /* Elementene flyter til venstre. */
-        margin: 10px; /* Setter margin rundt elementene til 10px. */
+        float: left; 
+        margin: 10px;
     }
+}
