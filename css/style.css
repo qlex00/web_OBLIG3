@@ -14,11 +14,15 @@ body {
 
 header nav {
     margin: 1rem 0 0 0; 
-    padding: 0; /
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 h1 {
     font-family: 'Birthstone Bounce';
+    margin: 0;
 }
 
 h1, a{
@@ -39,25 +43,13 @@ nav a {
 }
 
 
-ul{
-    margin: 1rem 0 0 0;
-    padding: 0;
+ul {
     list-style: none;
     text-align: center;
+    width: 100%;
     margin: 0;
     padding: 0;
 }
-
-ul li {
-    margin: 1rem 0 0 0;
-    padding: 0;
-    list-style: disc;
-}
-
-/*main, section, article, ol, li {
-    list-style-type: disc ;
-}*/
-
 
 #grid-container {
     display: grid;
@@ -80,9 +72,9 @@ header nav {
     position: relative;
 }
 
-/*.navbar {
+.navbar {
     display: none;
-}*/
+}
 
 .responsive {
     display: flex;
@@ -118,7 +110,6 @@ article {
     min-width: 250px;
     width: 100%; /*responsivt design. */
     margin: 1rem auto; 
-
 }
 
 main {
@@ -134,10 +125,12 @@ main section img {
     width:100%;
 }*/
 
-.punktliste {
+#punktliste {
     text-align: left;
     display: inline-block;
+    list-style: decimal;
 }
+
 
 #produktlink, a:visited{ /*gjør synlig hvilken linker en kan klikke på, kan endres*/
     display: block;
@@ -191,12 +184,17 @@ footer {
     }
 
     header nav ul {
-        float: none; /* Elementene flyter til høyre. */
+        float: none; 
         margin: 0; 
     }
 
     header nav ul li {
         display: inline-block; 
+        list-style: none;
+        text-align: center;
+        width: 100%;
+        margin: 0;
+        padding: 0;
     }
 
     header nav {
@@ -220,7 +218,14 @@ footer {
         margin: 0;
     }
 
+    #punktliste {
+        text-align: left;
+        display: inline-block;
+        list-style: decimal;
+    }
+
     main section article ol li {
         display: inline-block;
+        
     }
 }
